@@ -1,0 +1,18 @@
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+      - id: USER-WS
+        uri: http://localhost:8010
+      - id: ACCOUNT-WS
+        uri: http://localhost:8020
+
+
